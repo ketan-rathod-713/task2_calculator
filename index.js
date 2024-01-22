@@ -347,7 +347,7 @@ function calculateRemainder(a, b) {
 
 // ADDITIONAL FUNCTIONALITY FOR DEKSTOP USERS
 
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keydown", function(event) {
     const pressedKey = event.key;
 
     // Numerical key Pressed
