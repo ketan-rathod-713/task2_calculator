@@ -49,6 +49,11 @@ function operatorClickEvent(operator) { // assume all things done correctly
     if(operator !== DOT)
         isLastDotApplied = false
 
+    // if operations is empty then can't apply operator
+    if(operations.textContent.length == 0){
+        return; // can't apply operator now
+    }
+
     switch (operator) {
         case SUM:
             if (lastOperatorApplied && !isLastCharOperator(operations.textContent)) {
@@ -56,7 +61,6 @@ function operatorClickEvent(operator) { // assume all things done correctly
                 let ans = calculateResult()
                 if(isFloat(ans)) isLastDotApplied = true;
                 lastOperatorApplied = SUM
-                console.log("wow add +")
                 operations.textContent = ans;
                 operations.textContent = operations.textContent.concat("+")
             } else {
@@ -76,7 +80,6 @@ function operatorClickEvent(operator) { // assume all things done correctly
                     let ans = calculateResult()
                     if(isFloat(ans)) isLastDotApplied = true;
                     lastOperatorApplied = SUBSTRACT
-                    console.log("wow add -")
                     operations.textContent = ans;
                     operations.textContent = operations.textContent.concat("-")
                 } else {
@@ -158,7 +161,6 @@ function operatorClickEvent(operator) { // assume all things done correctly
                 
                             }
 
-                            console.log("REMAINDER ", lastOperatorApplied, operations.textContent)
                 
                             break; 
 
@@ -230,18 +232,14 @@ function calculateResult() { // string
     // Garranty -> only one operator
     let num1;
     let num2;
-    console.log("calculate result", operations.textContent)
     if(operations.textContent[0] === "-"){
         let arr = operations.textContent.substring(1).split(getOperator(lastOperatorApplied));
-        console.log("array is ",arr)
          num1 = parseFloat(arr[0]) * -1;
          num2 = parseFloat(arr[1])
-        console.log("during cal num1 and num2 is ",num1, num2)
     } else {
         let arr = operations.textContent.split(getOperator(lastOperatorApplied));
          num1 = parseFloat(arr[0])
          num2 = parseFloat(arr[1])
-        console.log("else during cal num1 and num2 is ",num1, num2)
 
     }
 
