@@ -26,14 +26,17 @@ body h1 {
 }
 
 #operations {
-    height: 200px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    padding: 10px;
+    padding: 15px 10px;
+    min-height: 200px;
+    width: 100%;
     font-size: 30px;
     color: navy;
     font-weight: 700;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    text-align: end;
+    display: inline-block;
+    vertical-align:bottom
 }
 
 #numberpad {
