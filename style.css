@@ -1,0 +1,101 @@
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+}
+
+body h1 {
+    padding: 50px 0;
+}
+
+#calculator {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid rgb(0, 106, 255);
+    box-shadow: 2px 2px 10px 0px blue;
+    /* margin-top: 10px; */
+}
+
+#operations {
+    height: 200px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 10px;
+    font-size: 30px;
+    color: navy;
+    font-weight: 700;
+}
+
+#numberpad {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+#numberpad > .icons {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#numberpad > .icons:active {
+    background-color: rgb(255, 157, 66);
+    transition: all 100ms;
+}
+
+/* #numberpad > .icons:hover {
+    background-color: grey;
+} */
+
+#numberpad > .operator {
+    background-color: rgb(84, 229, 255);
+    box-shadow: 5px 5px 4px 0px rgba(52,126,163,0.9);
+}
+
+
+#numberpad > .number {
+    background-color: white;
+    color: rgb(38, 165, 187);
+    background-color: white;
+    box-shadow: 5px 5px 2px 0px rgba(222, 220, 220, 0.9);
+}
+
+.zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+@media screen and (max-width: 700px) {
+    #calculator {
+        width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+    }
+    body h1 {
+        width: 100%;
+        text-align: center;
+        background-color: blue;
+        color: white;
+    }
+
+    body {
+        align-items: end;
+    }
+}
