@@ -25,11 +25,14 @@ body h1 {
     /* margin-top: 10px; */
 }
 
+#operations-wrapper {
+    overflow-x: scroll;
+}
+
 #operations {
-    height: 200px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+    width: 100%;
+    min-height: 200px;
+    word-wrap: break-word;
     padding: 10px;
     font-size: 30px;
     color: navy;
